@@ -4,7 +4,7 @@ export default function SelectBox({ options, label, ...props }) {
       <label>{label}</label>
       <select {...props}>
         {options.map((option, i) => (
-          <option key={i} value={option.value}>{option.name}</option>
+          <option key={i} selected={option.default ? true : undefined} value={option.value}>{option.name}</option>
         ))}
       </select>
     </div>

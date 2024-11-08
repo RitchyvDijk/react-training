@@ -1,11 +1,13 @@
 export default function NoteItem({note}) {
+
+
     return (
-        <article style={{backgroundColor: note.color}}>
-            <h1>{note.title}</h1>
-            <div>
+        <div className="note-card" style={{backgroundColor: note.color}}>
+            <h3>{note.title}</h3>
+            <p>
                 {note.content}
-            </div>
+            </p>
             <small>{new Date(note.date).toLocaleString()}</small>
-        </article>
+        </div>
     );
 }

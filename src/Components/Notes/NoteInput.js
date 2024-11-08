@@ -5,7 +5,7 @@ import SelectBox from "./SelectBox";
 export default function NoteInput({ addNote }) {
   const [titleValue, setTitleValue] = useState("");
   const [contentValue, setContentValue] = useState("");
-  const [colorValue, setColorValue] = useState("#ffffff");
+  const [colorValue, setColorValue] = useState("#202124");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,35 +15,41 @@ export default function NoteInput({ addNote }) {
         title: titleValue,
         content: contentValue,
         color: colorValue,
+        date: Date.now(),
       };
       addNote(note);
 
       setTitleValue("");
       setContentValue("");
-      setColorValue("#ffffff");
+      setColorValue("#202124");
     }
   };
 
   const options = [
-    {
-      value: "#ffffff",
-      name: "White",
+		{
+      value: "#202124",
+      name: "Standard",
+			default: true,
     },
     {
-      value: "#ff0000",
-      name: "Red",
+      value: "#77172E",
+      name: "Coral",
+			default: false,
     },
     {
-      value: "#00ff00",
-      name: "Green",
+      value: "#692C18",
+      name: "Peach",
+			default: false,
     },
     {
-      value: "#0000ff",
-      name: "Blue",
+      value: "#7D4A03",
+      name: "Sand",
+			default: false,
     },
     {
-      value: "#000000",
-      name: "Black",
+      value: "#232427",
+      name: "Chalk",
+			default: false,
     },
   ];
 
@@ -51,6 +57,7 @@ export default function NoteInput({ addNote }) {
     <form onSubmit={handleSubmit}>
       <InputField
         label="Title"
+        id="title"
         type="text"
         value={titleValue}
         placeholder="Note title"
@@ -58,16 +65,18 @@ export default function NoteInput({ addNote }) {
       />
       <InputField
         label="Content"
+        id="title"
         type="text"
         value={contentValue}
         placeholder="Note"
         onChange={(e) => setContentValue(e.target.value)}
       />
-      <SelectBox 
+      <SelectBox
         name="color-select"
+        id="color"
         label="Color"
-        onChange={(e) => setColorValue(e.target.value)} 
-        options={options} 
+        onChange={(e) => setColorValue(e.target.value)}
+        options={options}
       />
       <button type="submit">Add</button>
     </form>
