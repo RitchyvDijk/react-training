@@ -54,6 +54,7 @@ export default function NoteInput({ addNote }) {
   ];
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <InputField
         label="Title"
@@ -80,5 +81,6 @@ export default function NoteInput({ addNote }) {
       />
       <button type="submit">Add</button>
     </form>
+    </>
   );
 }
