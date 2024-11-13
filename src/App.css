@@ -41,10 +41,6 @@ button {
   line-height: 1.5;
   margin: 0;
 }
-button {
-  color: #3992ff;
-  font-weight: 500;
-}
 
 textarea:hover,
 input:hover,
@@ -110,6 +106,7 @@ form[action$="destroy"] button {
   border-right: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 #sidebar > * {

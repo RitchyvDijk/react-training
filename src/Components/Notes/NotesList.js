@@ -1,4 +1,3 @@
-import NoteInput from "./NoteInput";
 import NoteItem from "./NoteItem";
 import { useEffect, useState } from "react";
 import NoteNew from "./NoteNew";
@@ -27,13 +26,12 @@ export default function NotesList() {
 
   return (
     <>
-      <NoteNew />
-      <div style={{display: 'none'}}>
-      <NoteInput addNote={addNote} />
-      <div className="notes-container">
-        {notes.map((note, i) => <NoteItem key={i} note={note} />) ??
-          "Loading..."}
-      </div>
+      <NoteNew addNote={addNote} />
+      <div>
+        <div className="notes-container">
+          {notes.map((note, i) => <NoteItem key={i} note={note} />) ??
+            "Loading..."}
+        </div>
       </div>
     </>
   );
